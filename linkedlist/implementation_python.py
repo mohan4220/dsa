@@ -55,10 +55,25 @@ class LinkedList:
             current.next = Node(data, next_ptr)
 
     def find(self, value):
-        pass
+        current = self.head
+        count = 0
+        while current != None:
+            if current.data == value:
+                return count
+            current = current.next
+            count += 1
+        return -1
 
     def find_all(self, value):
-        pass
+        current = self.head
+        count = 0
+        found = []
+        while current != None:
+            if current.data == value:
+                found.append(count)
+            current = current.next
+            count += 1
+        return found
 
     def update(self, value, index):
         pass
@@ -81,5 +96,6 @@ if __name__ == "__main__":
     linklist.insert_at_index(45, 8)
     linklist.print()
     print("length", len(linklist))
+    print("index", linklist.find_all(3))
 
     print("\ndone")
